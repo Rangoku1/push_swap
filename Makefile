@@ -10,7 +10,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 RM = rm -rf
 
-SRC = push_swap.c
+SRC = push_swap.c check_args.c check_args2.c instruct.c
 
 
 OBJ = $(SRC:.c=.o)

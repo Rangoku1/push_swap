@@ -6,7 +6,7 @@
 /*   By: nelmrabe <nelmrabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:47:46 by nelmrabe          #+#    #+#             */
-/*   Updated: 2023/07/09 14:40:11 by nelmrabe         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:51:46 by nelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ int	main(int ac, char **av)
 		return (0);
 	for (int i = 0; i < stacks.a->size; i++)
 		printf("==>%d\n", stacks.a->tab[i]);
+	printf("size: %d\n", stacks.a->size);
 }

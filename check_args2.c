@@ -6,9 +6,11 @@
 /*   By: nelmrabe <nelmrabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 14:40:34 by nelmrabe          #+#    #+#             */
-/*   Updated: 2023/07/09 14:41:41 by nelmrabe         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:22:56 by nelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 void 	ft_error(void)
 {
