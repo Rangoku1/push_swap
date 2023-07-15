@@ -6,7 +6,7 @@
 /*   By: nelmrabe <nelmrabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:48:17 by nelmrabe          #+#    #+#             */
-/*   Updated: 2023/07/15 15:48:50 by nelmrabe         ###   ########.fr       */
+/*   Updated: 2023/07/15 19:54:36 by nelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ typedef struct s_stack
 
 typedef struct s_stacks
 {
-	t_stack *a;
-	t_stack *b;
+	t_stack	*a;
+	t_stack	*b;
+	int		*a_sorted;
 }t_stacks;
 
 /* Check args*/
@@ -42,9 +43,19 @@ void	check_rep(t_stack *a);
 int		is_sorted(t_stack *a);
 
 /* INstruction*/
-void	rotate_stack(t_stack *stack);
-void	swap_stack(t_stack *stack);
-void	reverse_rotate_stack(t_stack *stack);
-void	push_from_stack_to_stack(t_stack *stack1, t_stack *stack2);
+void rotate_stack(t_stack *stack, char x);
+void	swap_stack(t_stack *stack, char x);
+void	reverse_rotate_stack(t_stack *stack, char x);
+void	push_stack(t_stack *stack1, t_stack *stack2, char to);
 
+void	sort_three(t_stack *a);
+void	sort_five(t_stack *a, t_stack *b);
+
+void a_sorted(t_stacks *stacks);
+void a_sorted(t_stacks *stacks);
+int	index_of_bigest(t_stack *stack);
+int	content_index(int content, int *a_sorted);
+void	push_to_b(t_stacks *stack, int min, int max);
+int	the_greatest(t_stack *stack);
+void	big_sort(t_stacks *stack);
 #endif

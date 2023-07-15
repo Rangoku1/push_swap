@@ -6,13 +6,13 @@
 /*   By: nelmrabe <nelmrabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 15:46:16 by nelmrabe          #+#    #+#             */
-/*   Updated: 2023/07/15 15:45:27 by nelmrabe         ###   ########.fr       */
+/*   Updated: 2023/07/15 18:38:48 by nelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void rotate_stack(t_stack *stack)
+void rotate_stack(t_stack *stack, char x)
 {
 	int tmp;
 	int i;
@@ -25,19 +25,26 @@ void rotate_stack(t_stack *stack)
 		i++;
 	}
 	stack->tab[i] = tmp;
+	if (x == 'a')
+		write(1, "ra\n", 3);
+	else if (x == 'b')
+		write(1, "rb\n", 3);
 }
 
-
-void	swap_stack(t_stack *stack)
+void	swap_stack(t_stack *stack, char x)
 {
 	int tmp;
 
 	tmp = stack->tab[0];
 	stack->tab[0] = stack->tab[1];
 	stack->tab[1] = tmp;
+	if (x == 'a')
+		write(1, "sa\n", 3);
+	else if (x == 'b')
+		write(1, "sb\n", 3);
 }
 
-void	reverse_rotate_stack(t_stack *stack)
+void	reverse_rotate_stack(t_stack *stack, char x)
 {
 	int tmp;
 	int i;
@@ -50,9 +57,13 @@ void	reverse_rotate_stack(t_stack *stack)
 		i--;
 	}
 	stack->tab[i] = tmp;
+	if (x == 'a')
+		write(1, "rra\n", 4);
+	else if (x == 'b')
+		write(1, "rrb\n", 4);
 }
 
-void	push_from_stack_to_stack(t_stack *stack1, t_stack *stack2)
+void	push_stack(t_stack *stack1, t_stack *stack2, char to)
 {
 	int i;
 
@@ -71,6 +82,10 @@ void	push_from_stack_to_stack(t_stack *stack1, t_stack *stack2)
 	}
 	stack1->size--;
 	stack2->size++;
+	if (to == 'a')
+		write(1, "pa\n", 3);
+	else if (to == 'b')
+		write(1, "pb\n", 3);
 }
 // void swap_both(t_stack *a, t_stack *b)
 // {
