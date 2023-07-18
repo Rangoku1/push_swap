@@ -12,15 +12,19 @@
 
 #include "push_swap.h"
 
-void a_sorted(t_stacks *stacks)
+void	a_sorted(t_stacks *stacks)
 {
 	int	i;
 	int	j;
 	int	tmp;
 
 	stacks->a_sorted = malloc(sizeof(int) * stacks->a->size);
-	for (int i = 0; i < stacks->a->size; i++)
+	i = 0;
+	while (i < stacks->a->size)
+	{
 		stacks->a_sorted[i] = stacks->a->tab[i];
+		i++;
+	}
 	i = 0;
 	while (i < stacks->a->size)
 	{
@@ -89,6 +93,7 @@ void	push_to_b(t_stacks *stack, int min, int max)
 			rotate_stack(stack->a, 'a');
 	}
 }
+
 int	the_greatest(t_stack *stack)
 {
 	int	i;

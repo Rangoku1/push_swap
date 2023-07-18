@@ -11,25 +11,26 @@
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include "libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <limits.h>
+
 typedef struct s_stack
 {
-	int *tab;
-	int size;
-}t_stack;
+	int	*tab;
+	int	size;
+}	t_stack;
 
 typedef struct s_stacks
 {
 	t_stack	*a;
 	t_stack	*b;
 	int		*a_sorted;
-}t_stacks;
+}	t_stacks;
 
 /* Check args*/
 void	ft_error(void);
@@ -43,19 +44,21 @@ void	check_rep(t_stack *a);
 int		is_sorted(t_stack *a);
 
 /* INstruction*/
-void rotate_stack(t_stack *stack, char x);
+void	rotate_stack(t_stack *stack, char x);
 void	swap_stack(t_stack *stack, char x);
 void	reverse_rotate_stack(t_stack *stack, char x);
 void	push_stack(t_stack *stack1, t_stack *stack2, char to);
 
+/* INstruction*/
 void	sort_three(t_stack *a);
 void	sort_five(t_stack *a, t_stack *b);
 
-void a_sorted(t_stacks *stacks);
-void a_sorted(t_stacks *stacks);
-int	index_of_bigest(t_stack *stack);
-int	content_index(int content, int *a_sorted);
+/* INstruction*/
+void	a_sorted(t_stacks *stacks);
+void	a_sorted(t_stacks *stacks);
+int		index_of_bigest(t_stack *stack);
+int		content_index(int content, int *a_sorted);
 void	push_to_b(t_stacks *stack, int min, int max);
-int	the_greatest(t_stack *stack);
+int		the_greatest(t_stack *stack);
 void	big_sort(t_stacks *stack);
 #endif

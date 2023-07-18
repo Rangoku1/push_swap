@@ -20,20 +20,23 @@ void	sort_three(t_stack *a)
 			swap_stack(a, 'a');
 	}
 	if (a->tab[0] > a->tab[1] && a->tab[1] < a->tab[2] && a->tab[0] > a->tab[2])
-		rotate_stack(a,	'a');
+		rotate_stack(a, 'a');
 	else if (a->tab[0] > a->tab[1] && a->tab[1] > a->tab[2])
 	{
 		swap_stack(a, 'a');
 		reverse_rotate_stack(a, 'a');
 	}
-	else if (a->tab[0] > a->tab[1] && a->tab[1] < a->tab[2] && a->tab[0] < a->tab[2])
+	else if (a->tab[0] > a->tab[1] && a->tab[1] < a->tab[2] \
+	&& a->tab[0] < a->tab[2])
 		swap_stack(a, 'a');
-	else if (a->tab[0] < a->tab[1] && a->tab[1] > a->tab[2] && a->tab[0] < a->tab[2])
+	else if (a->tab[0] < a->tab[1] && a->tab[1] > a->tab[2] \
+	&& a->tab[0] < a->tab[2])
 	{
 		reverse_rotate_stack(a, 'a');
 		swap_stack(a, 'a');
 	}
-	else if (a->tab[0] < a->tab[1] && a->tab[1] > a->tab[2] && a->tab[0] > a->tab[2])
+	else if (a->tab[0] < a->tab[1] && a->tab[1] > a->tab[2] \
+	&& a->tab[0] > a->tab[2])
 		reverse_rotate_stack(a, 'a');
 }
 
@@ -60,8 +63,8 @@ int	index_of_smallest(t_stack *stack)
 
 int	the_smallest(t_stack *stack)
 {
-	int i;
-	int smallest;
+	int	i;
+	int	smallest;
 
 	i = 0;
 	smallest = stack->tab[0];
@@ -76,7 +79,7 @@ int	the_smallest(t_stack *stack)
 
 void	sort_five(t_stack *a, t_stack *b)
 {
-	int index;
+	int	index;
 
 	while (a->size > 3)
 	{
@@ -88,7 +91,7 @@ void	sort_five(t_stack *a, t_stack *b)
 			if (index > a->size / 2)
 				reverse_rotate_stack(a, 'a');
 		}
-		push_stack(a, b, 'b');	
+		push_stack(a, b, 'b');
 	}
 	sort_three(a);
 	while (b->size > 0)
