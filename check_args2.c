@@ -6,7 +6,7 @@
 /*   By: nelmrabe <nelmrabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 14:40:34 by nelmrabe          #+#    #+#             */
-/*   Updated: 2023/07/15 15:22:56 by nelmrabe         ###   ########.fr       */
+/*   Updated: 2023/07/18 14:47:48 by nelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ char	*oneline(char **args)
 {
 	char *tmp;
 	char *line;
-	int i = 1;
+	int i = 2;
 	
-	line = ft_strdup("");
+	line = ft_strjoin(args[1], " ");
 	while (args[i])
 	{
 		if (all_space(args[i]))
