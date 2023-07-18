@@ -10,7 +10,7 @@ CFLAGS = -Wall -Werror -Wextra #-fsanitize=address -g
 
 RM = rm -rf
 
-SRC = push_swap.c check_args.c check_args2.c instruct.c small_sort.c big_sort.c
+SRC = push_swap.c check_args.c check_args2.c instruct.c small_sort.c big_sort.c big_sort2.c
 
 OBJ = $(SRC:.c=.o)
 

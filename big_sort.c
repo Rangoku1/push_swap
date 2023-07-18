@@ -25,11 +25,11 @@ void	a_sorted(t_stacks *stacks)
 		stacks->a_sorted[i] = stacks->a->tab[i];
 		i++;
 	}
-	i = 0;
-	while (i < stacks->a->size)
+	i = -1;
+	while (++i < stacks->a->size)
 	{
-		j = 0;
-		while (j < stacks->a->size - 1)
+		j = -1;
+		while (++j < stacks->a->size - 1)
 		{
 			if (stacks->a_sorted[j] > stacks->a_sorted[j + 1])
 			{
@@ -37,9 +37,7 @@ void	a_sorted(t_stacks *stacks)
 				stacks->a_sorted[j] = stacks->a_sorted[j + 1];
 				stacks->a_sorted[j + 1] = tmp;
 			}
-			j++;
 		}
-		i++;
 	}
 }
 
@@ -91,46 +89,5 @@ void	push_to_b(t_stacks *stack, int min, int max)
 		}
 		if (index > max)
 			rotate_stack(stack->a, 'a');
-	}
-}
-
-int	the_greatest(t_stack *stack)
-{
-	int	i;
-	int	greatest;
-
-	i = 0;
-	greatest = stack->tab[0];
-	while (i < stack->size)
-	{
-		if (stack->tab[i] > greatest)
-			greatest = stack->tab[i];
-		i++;
-	}
-	return (greatest);
-}
-
-void	big_sort(t_stacks *stack)
-{
-	int	index;
-	int	min;
-	int	max;
-
-	min = 0;
-	max = 15;
-	if (stack->a->size > 200)
-		max = 40;
-	push_to_b(stack, min, max);
-	while (stack->b->size)
-	{
-		index = index_of_bigest(stack->b);
-		while (stack->b->tab[0] != the_greatest(stack->b))
-		{
-			if (index <= stack->b->size / 2)
-				rotate_stack(stack->b, 'b');
-			else
-				reverse_rotate_stack(stack->b, 'b');
-		}
-		push_stack(stack->b, stack->a, 'a');
 	}
 }
