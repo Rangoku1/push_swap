@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nelmrabe <nelmrabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:48:17 by nelmrabe          #+#    #+#             */
-/*   Updated: 2023/07/15 19:54:36 by nelmrabe         ###   ########.fr       */
+/*   Updated: 2023/07/21 20:14:56 by nelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 
 typedef struct s_stack
 {
@@ -44,21 +48,22 @@ void	check_rep(t_stack *a);
 int		is_sorted(t_stack *a);
 
 /* INstruction*/
-void	rotate_stack(t_stack *stack, char x);
-void	swap_stack(t_stack *stack, char x);
-void	reverse_rotate_stack(t_stack *stack, char x);
-void	push_stack(t_stack *stack1, t_stack *stack2, char to);
+void	rotate_stack(t_stack *stack);
+void	swap_stack(t_stack *stack);
+void	reverse_rotate_stack(t_stack *stack);
+void	push_stack(t_stack *stack1, t_stack *stack2);
+
+/*gnl*/
+int		ftstrlen(char *str);
+char	*ftstrjoin(char *s1, char *s2);
+int		ftstrchr(char *str, char c);
+char	*before_n(char *str);
+char	*after_n(char *ptr);
+int		read_fun(int read, char **line);
+char	*get_next_line(int fd);
 
 /* INstruction*/
-void	sort_three(t_stack *a);
-void	sort_five(t_stack *a, t_stack *b);
-
-/* INstruction*/
-void	a_sorted(t_stacks *stacks);
-void	a_sorted(t_stacks *stacks);
-int		index_of_bigest(t_stack *stack);
-int		content_index(int content, int *a_sorted);
-void	push_to_b(t_stacks *stack, int min, int max);
-int		the_greatest(t_stack *stack);
-void	big_sort(t_stacks *stack);
+void	swap_both(t_stack *a, t_stack *b);
+void	rotate_both(t_stack *a, t_stack *b);
+void	reverse_rotate_both(t_stack *a, t_stack *b);
 #endif

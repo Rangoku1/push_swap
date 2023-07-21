@@ -87,18 +87,3 @@ void	push_stack(t_stack *stack1, t_stack *stack2, char to)
 	else if (to == 'b')
 		write(1, "pb\n", 3);
 }
-// void swap_both(t_stack *a, t_stack *b)
-// {
-// 	swap_stack(a);
-// 	swap_stack(b);
-// }
-// void	rotate_both(t_stack *a, t_stack *b)
-// {
-// 	rotate_stack(a);
-// 	rotate_stack(b);
-// }
-// void	reverse_rotate_both(t_stack *a, t_stack *b)
-// {
-// 	reverse_rotate_stack(a);
-// 	reverse_rotate_stack(b);
-// }

@@ -6,7 +6,7 @@
 /*   By: nelmrabe <nelmrabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 19:18:56 by nelmrabe          #+#    #+#             */
-/*   Updated: 2023/07/15 19:53:11 by nelmrabe         ###   ########.fr       */
+/*   Updated: 2023/07/21 19:46:14 by nelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,20 +74,20 @@ void	push_to_b(t_stacks *stack, int min, int max)
 	while (stack->a->size)
 	{
 		index = content_index(stack->a->tab[0], stack->a_sorted);
-		if (min > index)
+		if (index > max)
+			rotate_stack(stack->a, 'a');
+		else if (min <= index && index <= max)
+		{
+			push_stack(stack->a, stack->b, 'b');
+			min++;
+			max++;
+		}
+		else if (min > index)
 		{
 			push_stack(stack->a, stack->b, 'b');
 			rotate_stack(stack->b, 'b');
 			min++;
 			max++;
 		}
-		if (min <= index && index <= max)
-		{
-			push_stack(stack->a, stack->b, 'b');
-			min++;
-			max++;
-		}
-		if (index > max)
-			rotate_stack(stack->a, 'a');
 	}
 }

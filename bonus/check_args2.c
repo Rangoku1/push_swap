@@ -6,29 +6,16 @@
 /*   By: nelmrabe <nelmrabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 14:40:34 by nelmrabe          #+#    #+#             */
-/*   Updated: 2023/07/18 14:47:48 by nelmrabe         ###   ########.fr       */
+/*   Updated: 2023/07/20 16:37:04 by nelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	ft_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
-}
-
-void	free_array(char **av)
-{
-	int	i;
-
-	i = 0;
-	while (av[i])
-	{
-		free(av[i]);
-		i++;
-	}
-	free(av);
 }
 
 int	all_space(char *str)
@@ -42,6 +29,34 @@ int	all_space(char *str)
 		return (1);
 	else
 		return (0);
+}
+
+char	*ft_join(char *s1, char *s2)
+{
+	char	*str;
+	int		len;
+	int		i;
+	int		j;
+
+	if (s1 == NULL)
+	{
+		s1 = malloc(1);
+		s1[0] = '\0';
+	}
+	len = ft_strlen(s1) + ft_strlen(s2);
+	str = malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s1[j])
+		str[i++] = s1[j++];
+	j = 0;
+	while (s2[j])
+		str[i++] = s2[j++];
+	str[i] = '\0';
+	free(s1);
+	return (str);
 }
 
 char	*oneline(char **args)
@@ -59,7 +74,7 @@ char	*oneline(char **args)
 		if (ft_strlen(args[i]) == 0)
 			ft_error();
 		tmp = ft_strjoin(args[i], " ");
-		line = ft_strjoin(line, tmp);
+		line = ft_join(line, tmp);
 		free(tmp);
 		i++;
 	}

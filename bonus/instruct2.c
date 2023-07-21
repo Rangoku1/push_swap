@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   instruct2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nelmrabe <nelmrabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 16:29:15 by nelmrabe          #+#    #+#             */
-/*   Updated: 2022/11/25 22:47:32 by nelmrabe         ###   ########.fr       */
+/*   Created: 2023/07/21 20:15:28 by nelmrabe          #+#    #+#             */
+/*   Updated: 2023/07/21 20:17:46 by nelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap_bonus.h"
 
-long	ft_atoi(const char *str)
+void	swap_both(t_stack *a, t_stack *b)
 {
-	int		i;
-	long	sign;
-	long	res;
+	swap_stack(a);
+	swap_stack(b);
+}
 
-	i = 0;
-	sign = 1;
-	res = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9' \
-	&& res * sign >= INT_MIN && res * sign <= INT_MAX)
-	{
-		res = (res * 10) + str[i] - 48;
-		i++;
-	}
-	return (res * sign);
+void	rotate_both(t_stack *a, t_stack *b)
+{
+	rotate_stack(a);
+	rotate_stack(b);
+}
+
+void	reverse_rotate_both(t_stack *a, t_stack *b)
+{
+	reverse_rotate_stack(a);
+	reverse_rotate_stack(b);
 }

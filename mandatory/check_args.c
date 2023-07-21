@@ -34,6 +34,8 @@ int	*tabint(char **av, t_stacks stacks)
 	tab = malloc(sizeof(int) * stacks.a->size);
 	while (spl_args[i])
 	{
+		if (ft_atoi(spl_args[i]) < INT_MIN || ft_atoi(spl_args[i]) > INT_MAX)
+			ft_error();
 		tab[i] = ft_atoi(spl_args[i]);
 		i++;
 	}
@@ -72,4 +74,17 @@ int	is_sorted(t_stack *a)
 		i++;
 	}
 	return (1);
+}
+
+void	free_array(char **av)
+{
+	int	i;
+
+	i = 0;
+	while (av[i])
+	{
+		free(av[i]);
+		i++;
+	}
+	free(av);
 }

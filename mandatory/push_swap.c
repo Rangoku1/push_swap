@@ -6,7 +6,7 @@
 /*   By: nelmrabe <nelmrabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:47:46 by nelmrabe          #+#    #+#             */
-/*   Updated: 2023/07/18 14:22:55 by nelmrabe         ###   ########.fr       */
+/*   Updated: 2023/07/21 20:13:30 by nelmrabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int	main(int ac, char **av)
 {
 	t_stacks	stacks;
 
-	stacks.a = malloc(sizeof(t_stack));
-	stacks.b = malloc(sizeof(t_stack));
 	if (ac == 1)
 		return (1);
+	stacks.a = malloc(sizeof(t_stack));
+	stacks.b = malloc(sizeof(t_stack));
 	stacks.a->tab = tabint(av, stacks);
 	stacks.b->size = 0;
 	stacks.b->tab = malloc(sizeof(int) * stacks.a->size);
